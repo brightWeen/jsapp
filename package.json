@@ -1,0 +1,30 @@
+{
+  "name": "jsapp",
+  "version": "0.1.0",
+  "description": "js客户端框架",
+  "author": "ligf <ligf82@126.com>",
+  "license": "MIT",
+  "main": "core/main.js",
+  "scripts": {
+    "win": "node_modules\\electron-prebuilt\\dist\\electron .",
+    "osx": "node_modules/electron-prebuilt/dist/Electron.app/Contents/MacOS/Electron build"
+  },
+  "devDependencies": {
+    "babelify": "^6.3.0",
+    "electron-debug": "^0.2.1",
+    "electron-prebuilt": "0.34.1",
+    "eslint-plugin-react": "^3.5.1",
+    "grunt": "^0.4.5",
+    "grunt-bg-shell": "^2.3.1",
+    "grunt-browserify": "^4.0.1",
+    "grunt-contrib-copy": "^0.8.1",
+    "grunt-contrib-watch": "^0.6.1",
+    "grunt-electron": "^2.0.1",
+    "grunt-react": "^0.12.3",
+    "grunt-shell": "^1.1.2"
+  },
+  "dependencies": {
+    "react": "^0.13.3",
+    "react-router": "^0.13.3"
+  }
+}

@@ -1,0 +1,5 @@
+# 编译和打包相关文件
+build/
+package/
+node_modules/
+.DS_Store
