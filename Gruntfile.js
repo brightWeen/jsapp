@@ -23,24 +23,24 @@ module.exports = function (grunt) {
                 }
             }
         },
-        browserify: {
-            options: {
-                debug: true,
-                transform: ['babelify']
-            },
-            app: {
-                src: 'web/app.jsx',
-                dest: 'build/web/app.js'
-            }
-        },
+        // browserify: {
+        //     options: {
+        //         debug: true,
+        //         transform: ['babelify']
+        //     },
+        //     app: {
+        //         src: 'web/app.jsx',
+        //         dest: 'build/web/app.js'
+        //     }
+        // },
         react: {
             'modules': {
                 files: [
                     {
                         expand: true,
-                        cwd: 'web/modules',
+                        cwd: 'web',
                         src: ['**/*.jsx'],
-                        dest: 'build/web/modules',
+                        dest: 'build/web',
                         ext: '.js'
                     }
                 ]
@@ -98,7 +98,7 @@ module.exports = function (grunt) {
     grunt.registerTask('debug', [
         'copy',
         'react',
-        'browserify',
+        // 'browserify',
         'bgShell',
         'watch'
     ]);
