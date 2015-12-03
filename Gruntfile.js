@@ -1,5 +1,5 @@
 /*global grunt*/
-module.exports = function (grunt) {
+module.exports = function(grunt) {
 
     grunt.initConfig({
         watch: {
@@ -7,7 +7,7 @@ module.exports = function (grunt) {
                 files: [
                     'web/app.jsx'
                 ],
-                tasks: ['react','browserify'],
+                tasks: ['react', 'browserify'],
                 options: {
                     livereload: true
                 }
@@ -35,29 +35,27 @@ module.exports = function (grunt) {
         // },
         react: {
             'modules': {
-                files: [
-                    {
-                        expand: true,
-                        cwd: 'web',
-                        src: ['**/*.jsx'],
-                        dest: 'build/web',
-                        ext: '.js'
-                    }
-                ]
+                files: [{
+                    expand: true,
+                    cwd: 'web',
+                    src: ['**/*.jsx'],
+                    dest: 'build/web',
+                    ext: '.js'
+                }]
             }
         },
         copy: {
             main: {
-                src:['package.json'],
-                dest:'build/'
+                src: ['package.json'],
+                dest: 'build/'
             },
             web: {
-                src:['web/*','!web/**/*.jsx'],
-                dest:'build/'
+                src: ['web/*', '!web/**/*.jsx'],
+                dest: 'build/'
             },
             core: {
-                src:['core/*'],
-                dest:'build/'
+                src: ['core/*'],
+                dest: 'build/'
             }
         },
         electron: {
@@ -66,17 +64,28 @@ module.exports = function (grunt) {
                     name: 'jsapp',
                     dir: 'build',
                     out: 'package',
-                    version: '0.34.1',
+                    version: '0.35.1',
                     platform: 'darwin',
                     arch: 'x64',
                     overwrite: true
+                }
+            },
+            winBuild: {
+                options: {
+                    name: 'jsapp',
+                    dir: 'build',
+                    out: 'package',
+                    version: '0.33.4',
+                    platform: 'win32',
+                    arch: 'x64',
+                    overwirte: true
                 }
             }
         },
         bgShell: {
             run: {
-                bg:true,
-                cmd: 'node_modules/electron-prebuilt/dist/Electron.app/Contents/MacOS/Electron build'
+                bg: true,
+                cmd: '/Users/ligf/.electron/electron-v0.35.1-darwin-x64/Electron.app/Contents/MacOS/Electron build'
             }
         }
     });
@@ -91,8 +100,8 @@ module.exports = function (grunt) {
     //build
     grunt.registerTask('default', [
         'copy',
-        'react',
-        'browserify'
+        'react'
+        //'browserify'
     ]);
 
     grunt.registerTask('debug', [
@@ -106,7 +115,7 @@ module.exports = function (grunt) {
     grunt.registerTask('package', [
         'copy',
         'react',
-        'browserify',
-        'electron'
+        //'browserify',
+        'electron:winBuild'
     ]);
 };

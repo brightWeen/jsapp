@@ -7,13 +7,9 @@
     var electronVersion = process.versions.electron;
 
     React.render(
-        <h1>hello 骚年!</h1>,
-        document.getElementById('head')
-    );
+        <h1>hello 骚年们!</h1>, document.getElementById('head'));
 
     React.render(
-        <Versions nodeVersion={nodeVersion} chromeVersion={chromeVersion}
-            electronVersion={electronVersion} />,
-        document.getElementById('body')
-    );
-})();
+        <Versions nodeVersion={nodeVersion} chromeVersion={chromeVersion} electronVersion={electronVersion}/>, document.getElementById('body'));
+})
+();
